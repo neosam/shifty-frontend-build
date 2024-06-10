@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Trunk Template</title>
-    <!--<link rel="stylesheet" href="./style.css" type="text/css" />-->
-    <link rel="stylesheet" href="/style-8140e80bca5234b3.css" integrity="sha384&#x2D;1LoK3NBAsSB2CETZaHJU&#x2F;lurVu5l1NCY7&#x2B;BGnkK3rO16K&#x2B;4Ivybj29TuVFbYWkKg"/>
+<head>
+  <title>shifty-dioxus</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/tailwind.css">
+
+</head>
+<body>
+  <div id="main"></div>
+  <script type="module">
+    import init from "/./assets/dioxus/shifty-dioxus.js";
+    init("/./assets/dioxus/shifty-dioxus_bg.wasm").then(wasm => {
+      if (wasm.__wbindgen_start == undefined) {
+        wasm.main();
+      }
+    });
+  </script>
   
-<link rel="modulepreload" href="/trunk-template-112f2014fe0d473d.js" crossorigin=anonymous integrity="sha384-fTkLyedrBlKTJNoay8Hl5Yg03kPJsktJOXqSRQboQFDz8d0hwOz2fqJjv8bXdy/r">
-<link rel="preload" href="/trunk-template-112f2014fe0d473d_bg.wasm" crossorigin=anonymous integrity="sha384-YquscAi2aCKkIwUTlo8E5c+XK8ynXxb/+07/5pNObO8uclUM4t2enjskhJpRcqPp" as="fetch" type="application/wasm"></head>
-  <body>
-  
-<script type="module">
-import init, * as bindings from '/trunk-template-112f2014fe0d473d.js';
-const wasm = await init('/trunk-template-112f2014fe0d473d_bg.wasm');
-
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script></body>
+</body>
 </html>
